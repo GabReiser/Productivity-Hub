@@ -1,3 +1,9 @@
+/* config.css */
+
+:root {
+  --baseColor: #606468;
+}
+
 /* helpers/align.css */
 
 .align {
@@ -31,6 +37,9 @@
 
 /* helpers/icon.css */
 
+:root {
+  --iconFill: var(--baseColor);
+}
 
 .icons {
   display: none;
@@ -46,7 +55,6 @@
 }
 
 /* layout/base.css */
-
 
 
 * {
@@ -78,9 +86,11 @@ body {
   min-height: 100vh;
 }
 
+/* modules/anchor.css */
 
-
-
+:root {
+  --anchorColor: #eee;
+}
 
 a {
   color: #eee;
@@ -96,7 +106,9 @@ a:hover {
 
 /* modules/form.css */
 
-
+:root {
+  --formGap: 0.875rem;
+}
 
 input {
   background-image: none;
@@ -141,62 +153,74 @@ input[type="submit"] {
   flex: 1;
 }
 
-/* modules/login.css */
+/* modules/register.css */
 
+:root {
+  --registerBorderRadus: 0.25rem;
+  --registerColor: #eee;
 
+  --registerInputBackgroundColor: #3b4148;
+  --registerInputHoverBackgroundColor: #434a52;
 
-.login {
-  color: #eee;
-  color: var(--loginColor);
+  --registerLabelBackgroundColor: #363b41;
+
+  --registerSubmitBackgroundColor: #ea4c88;
+  --registerSubmitColor: #eee;
+  --registerSubmitHoverBackgroundColor: #d44179;
 }
 
-.login label,
-.login input[type="text"],
-.login input[type="password"],
-.login input[type="submit"] {
+.register {
+  color: #eee;
+  color: var(--registerColor);
+}
+
+.register label,
+.register input[type="text"],
+.register input[type="password"],
+.register input[type="submit"] {
   border-radius: 0.25rem;
-  border-radius: var(--loginBorderRadus);
+  border-radius: var(--registerBorderRadus);
   padding: 1rem;
 }
 
-.login label {
+.register label {
   background-color: #363b41;
-  background-color: var(--loginLabelBackgroundColor);
+  background-color: var(--registerLabelBackgroundColor);
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
   padding-left: 1.25rem;
   padding-right: 1.25rem;
 }
 
-.login input[type="password"],
-.login input[type="text"] {
+.register input[type="password"],
+.register input[type="text"] {
   background-color: #3b4148;
-  background-color: var(--loginInputBackgroundColor);
+  background-color: var(--registerInputBackgroundColor);
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
 }
 
-.login input[type="password"]:focus,
-.login input[type="password"]:hover,
-.login input[type="text"]:focus,
-.login input[type="text"]:hover {
+.register input[type="password"]:focus,
+.register input[type="password"]:hover,
+.register input[type="text"]:focus,
+.register input[type="text"]:hover {
   background-color: #434a52;
-  background-color: var(--loginInputHoverBackgroundColor);
+  background-color: var(--registerInputHoverBackgroundColor);
 }
 
-.login input[type="submit"] {
+.register input[type="submit"] {
   background-color: #ea4c88;
-  background-color: var(--loginSubmitBackgroundColor);
+  background-color: var(--registerSubmitBackgroundColor);
   color: #eee;
-  color: var(--loginSubmitColor);
+  color: var(--registerSubmitColor);
   font-weight: 700;
   text-transform: uppercase;
 }
 
-.login input[type="submit"]:focus,
-.login input[type="submit"]:hover {
+.register input[type="submit"]:focus,
+.register input[type="submit"]:hover {
   background-color: #d44179;
-  background-color: var(--loginSubmitHoverBackgroundColor);
+  background-color: var(--registerSubmitHoverBackgroundColor);
 }
 
 /* modules/text.css */
@@ -208,4 +232,5 @@ p {
 
 .text--center {
   text-align: center;
+  color: #93989c;
 }

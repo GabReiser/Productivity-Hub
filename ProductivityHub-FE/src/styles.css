@@ -1,4 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
+
 :root {
   --baseColor: #606468 ;
 }
@@ -36,7 +36,21 @@
   --loginSubmitHoverBackgroundColor: #6f88cf;
 }
 
+:root {
+  --registerBorderRadus: 0.25rem;
+  --registerColor: #eee;
+
+  --registerInputBackgroundColor: #302B27;
+  --registerInputHoverBackgroundColor: rgb(86, 92, 99);
+
+  --registerLabelBackgroundColor: #ffffff;
+
+  --registerSubmitBackgroundColor: #576CA8;
+  --registerSubmitColor: #eee;
+  --registerSubmitHoverBackgroundColor: #6f88cf;
+}
 
 :root {
   --iconFill: var(--baseColor);
 }
+

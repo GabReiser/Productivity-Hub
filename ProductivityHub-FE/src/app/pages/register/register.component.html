@@ -2,32 +2,38 @@
 
   <div class="grid">
 
-    <form action="#" method="POST" class="form login">
+    <form (ngSubmit)="onRegister()" class="form register">
 
       <div class="form__field">
-        <label for="login__username"><svg class="icon">
+        <label for="register__username"><svg class="icon">
             <use xlink:href="#icon-user"></use>
           </svg><span class="hidden">Username</span></label>
-        <input autocomplete="username" id="login__username" type="text" class="form__input" placeholder="Username" required [(ngModel)]="loginObj.UserName" name="UserName" >
+        <input autocomplete="username" id="register__username" type="text" class="form__input" placeholder="Username"  [(ngModel)]="registerObj.UserName" name="UserName" required >
       </div>
 
       <div class="form__field">
-        <label for="login__password"><svg class="icon">
+        <label for="register__password"><svg class="icon">
             <use xlink:href="#icon-lock"></use>
           </svg><span class="hidden">Password</span></label>
-        <input id="login__password" type="password"  class="form__input" placeholder="Password" required required [(ngModel)]="loginObj.Password" name="password">
+        <input id="register__password" type="password"  class="form__input" placeholder="Password" required [(ngModel)]="registerObj.Password" name="Password">
       </div>
 
       <div class="form__field">
-        <input type="submit" value="Sign In" (click)="onLogin()">
+        <label for="register__email"><svg class="icon">
+            <use xlink:href="#icon-user"></use>
+          </svg><span class="hidden">Email</span></label>
+        <input autocomplete="e-mail" id="register__email" type="text" class="form__input" placeholder="E-mail"  [(ngModel)]="registerObj.Email" name="UserName" required >
       </div>
 
-    </form>
+      <div class="form__field">
+        <input type="submit" value="Register">
+      </div>
 
-    <p class="text--center">Not a member? <a href="/register">Sign up now</a> <svg class="icon">
+      <p class="text--center">I am member!  <a href="/login">login</a> <svg class="icon">
         <use xlink:href="#icon-arrow-right"></use>
       </svg></p>
 
+    </form>
   </div>
 
   <svg xmlns="http://www.w3.org/2000/svg" class="icons">

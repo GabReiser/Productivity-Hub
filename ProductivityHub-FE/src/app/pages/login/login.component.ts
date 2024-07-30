@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -15,15 +16,17 @@ export class LoginComponent {
 
   loginObj: Login;
 
-  constructor(private http: HttpClient){
+  constructor(private http: HttpClient, private router: Router){
     this.loginObj = new Login();
   }
   onLogin(){
     this.http.post('',this.loginObj),subscribe((res:any)=>{
       if(res.result){
-        alert("login sucess")
+        alert("login sucess");
+        localStorage.setItem('loginToken', res.data.token)
+        this.router.navigateByUrl('/dashboard')
       }else{
-        alert(res.message)
+        alert(res.message);
       }
     })
   }
