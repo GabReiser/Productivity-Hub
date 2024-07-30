@@ -1,1 +1,42 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --baseColor: #606468 ;
+}
+
+:root {
+  --htmlFontSize: 100%;
+  --bodyBackgroundColor: #1B264F;
+  --bodyColor: var(--baseColor);
+  --bodyFontFamily: "Open Sans";
+  --bodyFontFamilyFallback: sans-serif;
+  --bodyFontSize: 0.875rem;
+  --bodyFontWeight: 400;
+  --bodyLineHeight: 1.5;
+}
+
+:root {
+  --anchorColor: #eee;
+}
+
+:root {
+  --formGap: 0.875rem;
+}
+
+:root {
+  --loginBorderRadus: 0.25rem;
+  --loginColor: #eee;
+
+  --loginInputBackgroundColor: #302B27;
+  --loginInputHoverBackgroundColor: rgb(86, 92, 99);
+
+  --loginLabelBackgroundColor: #ffffff;
+
+  --loginSubmitBackgroundColor: #576CA8;
+  --loginSubmitColor: #eee;
+  --loginSubmitHoverBackgroundColor: #6f88cf;
+}
+
+
+:root {
+  --iconFill: var(--baseColor);
+}
