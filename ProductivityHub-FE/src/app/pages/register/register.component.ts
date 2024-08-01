@@ -2,6 +2,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-register',
@@ -20,14 +21,17 @@ export class RegisterComponent {
 
   onRegister(){
     //Colocar o endPoint no ''
-    this.http.post('', this.registerObj).subscribe((res: any) => {
+    this.http.post(`${environment.apiUrl}/login`, this.registerObj).subscribe((res: any) => {
       if(res.result){
-        alert("Registro realizado com sucesso!");
+        alert("Register sucessful!");
         this.router.navigateByUrl('/login');
       } else {
         alert(res.message);
       }
-    });
+    },(error) => {
+      console.error('Error during register:', error);
+      alert('An error occurred during register.');
+  });
   }
 }
 
