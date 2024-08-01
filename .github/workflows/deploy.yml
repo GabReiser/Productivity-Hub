@@ -1,0 +1,31 @@
+name: Deploy Java Application
+
+on:
+  push:
+    branches:
+      - main  # ou a branch que você deseja monitorar para deploy
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up SSH
+      uses: webfactory/ssh-agent@v0.5.3
+      with:
+        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+    - name: Install dependencies
+      run: |
+        cd ProductivityHub-BE
+        ./mvnw install -DskipTests
+
+    - name: Deploy to server
+      run: |
+        scp -r ProductivityHub-BE user@your_host:/path/to/deploy
+        ssh user@your_host 'bash -s' < ./ProductivityHub-BE/deploy.sh
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
