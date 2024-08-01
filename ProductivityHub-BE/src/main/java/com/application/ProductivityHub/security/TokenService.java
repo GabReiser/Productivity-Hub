@@ -35,16 +35,16 @@ public class TokenService {
     }
 
     public String validateToken(String token){
-      try {
+        try {
             Algorithm algorithm = Algorithm.HMAC256(secret);
             return JWT.require(algorithm)
                     .withIssuer("ProductivityHub-login")
                     .build()
                     .verify(token)
                     .getSubject();
-      }catch (JWTVerificationException e){
-          System.out.println(e.getMessage());
-          return null;
-      }
+        }catch (JWTVerificationException e){
+            System.out.println(e.getMessage());
+            return null;
+        }
     }
 }

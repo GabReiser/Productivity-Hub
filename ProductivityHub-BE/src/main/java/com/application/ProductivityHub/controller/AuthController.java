@@ -57,5 +57,5 @@ public class AuthController {
             return ResponseEntity.ok(new ResponseDTO(newUser.getUsername(), token));
         }
         return ResponseEntity.badRequest().body("User already exists");
-       }
+    }
 }
