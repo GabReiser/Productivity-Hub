@@ -9,27 +9,27 @@ import { AboutUsComponent } from './pages/about-us/about-us.component';
 export const routes: Routes = [
   {
 
-      path: '', redirectTo: 'home', pathMatch: 'full'
-    },
-    {
-      path: 'home',
-      component:HomeComponent
-    },
-    {
-      path: 'login',
-      component:LoginComponent
-    },
-    {
-      path: 'register',
-      component:RegisterComponent
-    },
-    {
-      path: 'dashboard',
-      component:DashboardComponent,
-    },
-    {
-      path: 'about-us',
-      component:AboutUsComponent,
-    },
+    path: '', redirectTo: 'home', pathMatch: 'full'
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'register',
+    component: RegisterComponent
+  },
+  {
+    path: 'home',
+    component: HomeComponent
+  },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+  },
+  {
+    path: 'about-us',
+    component: AboutUsComponent,
+  },
 
 ];

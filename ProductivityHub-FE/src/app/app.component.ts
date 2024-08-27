@@ -1,13 +1,18 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule, RouterOutlet } from '@angular/router';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA }      from '@angular/core';
+import { HeaderComponent } from './pages/header/header.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterModule, RouterOutlet, HeaderComponent],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'ProductivityHub-FE';
 }
+
+
