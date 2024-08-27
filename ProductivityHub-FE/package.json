@@ -4,9 +4,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "build": "ng build --prod",
+    "deploy": "npm run build && rsync -avz --delete dist/ProductivityHub-FE/ root@86.38.204.217:/var/www/html/"
   },
   "private": true,
   "dependencies": {
