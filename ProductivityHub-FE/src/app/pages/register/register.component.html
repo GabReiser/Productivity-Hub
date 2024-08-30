@@ -31,13 +31,29 @@
                 </div>
 
                   <!-- Email input -->
-                  <div data-mdb-input-init class="form-outline mb-4">
-                    <label class="form-label" for="form3Example3"><svg class="icon">
-                        <use xlink:href="#icon-user"></use>
-                      </svg> E-mail</label>
-                    <input type="email" id="form3Example3" class="form-control" required [(ngModel)]="registerObj.email"
-                      name="email" />
+                <div data-mdb-input-init class="form-outline mb-4">
+                  <label class="form-label" for="form3Example3">
+                    <svg class="icon">
+                      <use xlink:href="#icon-user"></use>
+                    </svg> 
+                    E-mail
+                  </label>
+                  <input 
+                    type="email" 
+                    id="form3Example3" 
+                    class="form-control" 
+                    required 
+                    email 
+                    [(ngModel)]="registerObj.email" 
+                    name="email"
+                    #email="ngModel"
+                  />
+                  <!-- Mensagem de erro de validação -->
+                  <div *ngIf="email.invalid && email.touched" class="text-danger">
+                    <small *ngIf="email.errors?.['required']">O e-mail é obrigatório.</small>
+                    <small *ngIf="email.errors?.['email']">Formato de e-mail inválido.</small>
                   </div>
+                </div>
 
                 <!-- Password input -->
                 <div data-mdb-input-init class="form-outline mb-4">
