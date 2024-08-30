@@ -21,7 +21,7 @@ export class DashboardComponent implements OnInit{
   getAllusers(){
     //Nesse get deve se receber todos os usuários, para assim verificar o token, inserir BreakPoint
     this.http.get('').subscribe((res:any)=>{
-      this.users=res.data;
+      this.users=res.token;
     }, error=>{
       alert("Error !From API")
     })
