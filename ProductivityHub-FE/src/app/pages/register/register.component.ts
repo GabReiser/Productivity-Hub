@@ -21,8 +21,8 @@ export class RegisterComponent {
 
   onRegister(){
     //Colocar o endPoint no ''
-    this.http.post(`${environment.apiUrl}/login`, this.registerObj).subscribe((res: any) => {
-      if(res.result){
+    this.http.post(`${environment.apiUrl}/auth/register`, this.registerObj).subscribe((res: any) => {
+      if(res.token){
         alert("Register sucessful!");
         this.router.navigateByUrl('/login');
       } else {
@@ -36,14 +36,16 @@ export class RegisterComponent {
 }
 
 export class Register {
-  UserName: string;
-  Password: string;
-  Email: string;
+  username: string;
+  password: string;
+  email: string;
+  role: string;
 
   constructor(){
-    this.UserName = '';
-    this.Password = '';
-    this.Email = '';
+    this.username = '';
+    this.password = '';
+    this.email = '';
+    this.role = 'USER';
   }
 }
 function subscribe(arg0: (res: any) => void) {

@@ -21,10 +21,10 @@ export class LoginComponent {
   }
 
   onLogin() {
-    this.http.post(`${environment.apiUrl}/login`, this.loginObj).subscribe((res: any) => {
-      if (res.result) {
+    this.http.post(`${environment.apiUrl}/auth/login`, this.loginObj).subscribe((res: any) => {
+      if (res.token) {
         alert("Login successful");
-        localStorage.setItem('loginToken', res.data.token);
+        localStorage.setItem('loginToken', res.token);
         this.router.navigateByUrl('/dashboard');
       } else {
         alert(res.message);
@@ -37,11 +37,11 @@ export class LoginComponent {
 }
 
 export class Login {
-  UserName: string;
-  Password: string;
+  email: string;
+  password: string;
 
   constructor() {
-    this.UserName = '';
-    this.Password = '';
+    this.email = '';
+    this.password = '';
   }
 }

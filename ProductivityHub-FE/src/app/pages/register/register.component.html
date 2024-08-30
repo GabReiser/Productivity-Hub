@@ -26,7 +26,7 @@
                   <label class="form-label" for="form3Example3"><svg class="icon">
                       <use xlink:href="#icon-user"></use>
                     </svg> Username</label>
-                  <input type="email" id="form3Example3" class="form-control" required [(ngModel)]="registerObj.UserName"
+                  <input type="userName" id="form3Example3" class="form-control" required [(ngModel)]="registerObj.username"
                     name="UserName" />
                 </div>
 
@@ -35,8 +35,8 @@
                     <label class="form-label" for="form3Example3"><svg class="icon">
                         <use xlink:href="#icon-user"></use>
                       </svg> E-mail</label>
-                    <input type="email" id="form3Example3" class="form-control" required [(ngModel)]="registerObj.Email"
-                      name="UserName" />
+                    <input type="email" id="form3Example3" class="form-control" required [(ngModel)]="registerObj.email"
+                      name="email" />
                   </div>
 
                 <!-- Password input -->
@@ -45,7 +45,7 @@
                     <use xlink:href="#icon-lock"></use>
                   </svg> Password</label>
                   <input type="password" id="form3Example4" class="form-control" required
-                    [(ngModel)]="registerObj.Password" name="password" />
+                    [(ngModel)]="registerObj.password" name="password" />
                 </div>
 
 

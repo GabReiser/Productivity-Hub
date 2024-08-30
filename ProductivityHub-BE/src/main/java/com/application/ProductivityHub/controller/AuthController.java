@@ -46,16 +46,19 @@ public class AuthController {
     @PostMapping("/register")
     public ResponseEntity register(@RequestBody RegisterRequestDTO body){
         Optional<User> user = this.userRepository.findByEmail(body.email());
-        if (user.isEmpty()){
-            User newUser = new User();
-            newUser.setPassword(passwordEncoder.encode(body.password()));
-            newUser.setEmail(body.email());
-            newUser.setUsername(body.username());
-            newUser.setRole(body.role());
-            this.userRepository.save(newUser);
-            String token = tokenService.generateToken(newUser);
-            return ResponseEntity.ok(new ResponseDTO(newUser.getUsername(), token));
+        if(!body.email().isBlank() || !body.email().isEmpty()) {
+            if (user.isEmpty()) {
+                User newUser = new User();
+                newUser.setPassword(passwordEncoder.encode(body.password()));
+                newUser.setEmail(body.email());
+                newUser.setUsername(body.username());
+                newUser.setRole(body.role());
+                this.userRepository.save(newUser);
+                String token = tokenService.generateToken(newUser);
+                return ResponseEntity.ok(new ResponseDTO(newUser.getUsername(), token));
+            }
+            return ResponseEntity.badRequest().body("User already exists");
         }
-        return ResponseEntity.badRequest().body("User already exists");
+        return ResponseEntity.badRequest().body("You cannot send with a field empty");
     }
 }
